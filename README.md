@@ -1,4 +1,4 @@
-# # Huawei Cloud OBS
+# Huawei Cloud OBS
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
