@@ -1,0 +1,20 @@
+{
+  "Statement": [
+    {
+      "Sid": "Allow All Public Read",
+      "Effect": "Allow",
+      "Principal": {
+        "ID": [
+          "*"
+        ]
+      },
+      "Action": [
+        "GetObject"
+      ],
+      "Resource": [
+        "${resource}",
+        "${resource}/*"
+      ]
+    }
+  ]
+}
