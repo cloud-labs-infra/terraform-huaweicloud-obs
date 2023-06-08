@@ -9,6 +9,8 @@ resource "huaweicloud_obs_bucket" "main" {
   acl           = var.acl
   versioning    = var.versioning
   force_destroy = var.force_destroy
+  policy        = var.policy
+  policy_format = var.policy_format
 
   tags = var.tags
 }

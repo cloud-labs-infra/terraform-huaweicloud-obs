@@ -34,9 +34,12 @@ variable "storage_class" {
 
 variable "acl" {
   description = "Specifies the ACL policy for a bucket"
-  # The predefined common policies are as follows: "private", "public-read", "public-read-write" and "log-delivery-write".
-  type    = string
-  default = "private"
+  type        = string
+  default     = "private"
+  validation {
+    condition     = contains(["private", "public-read", "public-read-write", "log-delivery-write"], var.acl)
+    error_message = "The predefined common policies are as follows: 'private', 'public-read', 'public-read-write' and 'log-delivery-write'."
+  }
 }
 
 variable "force_destroy" {
@@ -45,8 +48,23 @@ variable "force_destroy" {
   default     = false
 }
 
+variable "policy" {
+  description = <<DES
+  Specifies the text of the bucket policy in JSON format. For more information about obs format bucket policy,
+  see the Developer Guide https://support.huaweicloud.com/intl/en-us/perms-cfg-obs/obs_40_0004.html
+  DES
+  type        = string
+  default     = null
+}
+
+variable "policy_format" {
+  description = "Specifies the policy format, the supported values are obs and s3. Defaults to obs"
+  type        = string
+  default     = null
+}
+
 variable "tags" {
-  description = "Specifies the key/value pairs to associate with the VPC"
+  description = "Specifies the key/value pairs to associate with the OBS"
   type        = map(string)
   default     = {}
 }
