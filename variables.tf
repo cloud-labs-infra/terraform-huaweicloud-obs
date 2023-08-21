@@ -63,6 +63,24 @@ variable "policy_format" {
   default     = null
 }
 
+variable "lifecycle_rules" {
+  description = <<DES
+  A configuration of object lifecycle management:
+
+  * `key` - Unique identifier for lifecycle rules, the Rule Name contains a maximum of 255 characters;
+  * `enabled` - Specifies lifecycle rule status;
+  * `prefix`  - Object key prefix identifying one or more objects to which the rule applies. If omitted, all objects in
+    the bucket will be managed by the lifecycle rule;
+  * `expiration_days` - Specifies the number of days when objects that have been last updated are automatically deleted.
+DES
+  type = map(object({
+    enabled         = optional(bool, true)
+    prefix          = optional(string, null)
+    expiration_days = number
+  }))
+  default = {}
+}
+
 variable "tags" {
   description = "Specifies the key/value pairs to associate with the OBS"
   type        = map(string)
