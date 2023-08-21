@@ -12,6 +12,17 @@ resource "huaweicloud_obs_bucket" "main" {
   policy        = var.policy
   policy_format = var.policy_format
 
+  dynamic "lifecycle_rule" {
+    for_each = var.lifecycle_rules
+    content {
+      name    = lifecycle_rule.key
+      enabled = lifecycle_rule.value.enabled
+      prefix  = lifecycle_rule.value.prefix
+      expiration {
+        days = lifecycle_rule.value.expiration_days
+      }
+    }
+  }
+
   tags = var.tags
 }
-
