@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0](https://github.com/cloud-labs-infra/terraform-huaweicloud-obs/compare/v1.1.0...v1.2.0) (2023-08-21)
+
+
+### Features
+
+* Add Lifecycle rule argument ([#7](https://github.com/cloud-labs-infra/terraform-huaweicloud-obs/issues/7)) ([ed31300](https://github.com/cloud-labs-infra/terraform-huaweicloud-obs/commit/ed31300dfeff87f5209f30b4ac0d68e49a30b2d6))
+
 ## [1.1.0](https://github.com/cloud-labs-infra/terraform-huaweicloud-obs/compare/v1.0.0...v1.1.0) (2023-06-08)
 
 
