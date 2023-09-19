@@ -24,5 +24,14 @@ resource "huaweicloud_obs_bucket" "main" {
     }
   }
 
+  dynamic "cors_rule" {
+    for_each = var.cors_rules
+    content {
+      allowed_methods = cors_rule.value.allowed_methods
+      allowed_origins = cors_rule.value.allowed_origins
+      max_age_seconds = cors_rule.value.max_age_seconds
+    }
+  }
+
   tags = var.tags
 }
