@@ -81,6 +81,31 @@ DES
   default = {}
 }
 
+variable "cors_rules" {
+  description = <<DES
+  A configuration of object CORS rules:
+
+  * `allowed_origins` - Requests from this origin can access the bucket;
+  * `allowed_methods` - Specifies the acceptable operation type of buckets and objects;
+  * `max_age_seconds` - Specifies the duration that your browser can cache CORS responses, expressed in seconds;
+DES
+  type = list(object({
+    allowed_origins = list(string)
+    allowed_methods = list(string)
+    max_age_seconds = optional(number, 100)
+  }))
+  default = []
+  validation {
+    condition = alltrue(flatten([
+      for rule in var.cors_rules : [
+        for method in rule.allowed_methods :
+        contains(["GET", "PUT", "POST", "DELETE", "HEAD"], method)
+      ]
+    ]))
+    error_message = "Each method in allowed_methods should be one of: 'GET', 'PUT', 'POST', 'DELETE', 'HEAD'."
+  }
+}
+
 variable "tags" {
   description = "Specifies the key/value pairs to associate with the OBS"
   type        = map(string)
