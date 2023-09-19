@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0](https://github.com/cloud-labs-infra/terraform-huaweicloud-obs/compare/v1.2.0...v1.3.0) (2023-09-19)
+
+
+### Features
+
+* Add CORS rules argument ([#10](https://github.com/cloud-labs-infra/terraform-huaweicloud-obs/issues/10)) ([908338b](https://github.com/cloud-labs-infra/terraform-huaweicloud-obs/commit/908338be81deee24c173e753aed1fd81ef0c0e7e))
+
 ## [1.2.0](https://github.com/cloud-labs-infra/terraform-huaweicloud-obs/compare/v1.1.0...v1.2.0) (2023-08-21)
 
 
