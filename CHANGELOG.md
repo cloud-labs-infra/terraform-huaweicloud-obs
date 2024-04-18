@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.0](https://github.com/cloud-labs-infra/terraform-huaweicloud-obs/compare/v1.3.0...v1.4.0) (2024-04-18)
+
+
+### Features
+
+* Update version of tf and providers ([#12](https://github.com/cloud-labs-infra/terraform-huaweicloud-obs/issues/12)) ([bee7b60](https://github.com/cloud-labs-infra/terraform-huaweicloud-obs/commit/bee7b6030e52342b02791f7c5afa0efefd8f8b3b))
+
 ## [1.3.0](https://github.com/cloud-labs-infra/terraform-huaweicloud-obs/compare/v1.2.0...v1.3.0) (2023-09-19)
 
 
